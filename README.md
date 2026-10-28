@@ -41,7 +41,7 @@ Le fichier docker-compose.yaml à la racine du dépôt lance **Zigbee2MQTT** et 
 
 Adaptez si besoin le port série de la clé Zigbee (`/dev/ttyUSB0`) et configurez le serveur MQTT dans le fichier `configuration.yaml` de Zigbee2MQTT (volume `data`).
 
-L'interface de Zigbee2MQTT est disponible sur `http://<ip du serveur docker>/`, le tableau de bord DKNR sur `http://<ip du serveur docker>:1880/` et l'éditeur Node-RED sur `http://<ip du serveur docker>:1880/admin`.
+Le tableau de bord DKNR est disponible sur `http://<ip du serveur docker>/`, l'éditeur Node-RED sur `http://<ip du serveur docker>/admin` et l'interface de Zigbee2MQTT sur `http://<ip du serveur docker>:1880/`.
 
 
 ## Configuration
