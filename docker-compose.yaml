@@ -7,7 +7,7 @@
 #
 # Zigbee2MQTT and DKNR Zigbee must use the same MQTT server:
 # set it in Zigbee2MQTT data/configuration.yaml (mqtt: server) and in DKNR Zigbee "Configurer" page.
-# Zigbee2MQTT web interface: http://<docker host>:80, DKNR Zigbee: http://<docker host>:1880
+# DKNR Zigbee: http://<docker host>, Zigbee2MQTT web interface: http://<docker host>:1880
 #
 name: DKNRZigbee
 
@@ -20,7 +20,7 @@ services:
       - data:/app/data
       - /run/udev:/run/udev:ro
     ports:
-      - 80:8080
+      - 1880:8080
     environment:
       - TZ=Europe/Paris
     devices:
@@ -46,8 +46,8 @@ services:
       DKNR_PASSWORD: ${DKNR_PASSWORD}
       DKNR_SECRET: ${DKNR_SECRET}
     ports:
-      # change the first port if another DKNR container already uses 1880 on this host
-      - 1880:1880
+      # change the first port if port 80 is already used on this host
+      - 80:1880
     volumes:
       - dknr_zigbee:/data
     healthcheck:
