@@ -72,7 +72,7 @@ Dans la page **Réseau**, cliquez sur **Autoriser** (254 secondes au maximum) pu
 
 Avec le topic `dknr` par défaut, l'identifiant d'un appareil est son adresse IEEE sans `0x` (ex : `00158d0001a2b3c4`) et le nom d'une entité est la propriété Zigbee2MQTT (ex : `temperature`, `state`, `state_l1`) :
 
-* `dknr/get/zigbee/<id>/<entité>` : valeurs publiées (retenues, sauf `action`) à chaque changement. Les états binaires valent `1` ou `0`.
+* `dknr/get/zigbee/<id>/<entité>` : valeurs publiées (retenues, sauf `action`) à chaque changement. Les états binaires valent `1` ou `0`, y compris les listes à deux états de type arrêt / marche (ex : `idle` / `occupied`).
 * `dknr/set/zigbee/<id>/<entité>` : commande, `1`, `0` ou `TOGGLE` (`ON` et `OFF` sont aussi acceptés) pour un état binaire, un nombre ou une valeur de la liste pour les autres.
 * `dknr/discovery/zigbee/<id>/<entité>` : description des entités.
 * `homeassistant/<type>/zigbee/<id>_<entité>/config` : Home Assistant Discovery.
