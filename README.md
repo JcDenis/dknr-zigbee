@@ -74,6 +74,7 @@ Avec le topic `dknr` par défaut, l'identifiant d'un appareil est son adresse IE
 
 * `dknr/get/zigbee/<id>/<entité>` : valeurs publiées (retenues, sauf `action`) à chaque changement. Les états binaires valent `1` ou `0`, y compris les listes à deux états de type arrêt / marche (ex : `idle` / `occupied`).
 * `dknr/set/zigbee/<id>/<entité>` : commande, `1`, `0` ou `TOGGLE` (`ON` et `OFF` sont aussi acceptés) pour un état binaire, un nombre ou une valeur de la liste pour les autres.
+* La couleur des ampoules (espace x,y ou teinte / saturation de Zigbee2MQTT) est publiée et pilotée en hexadécimal `#rrggbb` (unité `chex`) sur l'entité `color`, à pleine luminosité. La luminosité reste sur l'entité `brightness`.
 * `dknr/discovery/zigbee/<id>/<entité>` : description des entités.
 * `homeassistant/<type>/zigbee/<id>_<entité>/config` : Home Assistant Discovery.
 
